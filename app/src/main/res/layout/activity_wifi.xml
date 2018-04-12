@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.WifiActivity">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/tool_bar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/colorPrimary"
+        android:focusable="true"
+        app:title="Wifi"
+        app:titleTextColor="#fff"></android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="8dp">
+
+        <Button
+            android:id="@+id/btn_on"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn On Wifi"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btn_off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Turn Off Wifi"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btn_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="View Wifi Info"
+            android:textColor="#000" />
+
+        <Button
+            android:id="@+id/btn_scan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan Wifi"
+            android:textColor="#000" />
+        <ListView
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/lv_wifi"></ListView>
+        <TextView
+            android:visibility="gone"
+            android:gravity="center"
+            android:layout_marginVertical="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_wifi_info"
+            android:text="TUAN ANH KIDD"
+            android:textColor="#000"
+            android:textSize="20sp"/>
+    </LinearLayout>
+</LinearLayout>
