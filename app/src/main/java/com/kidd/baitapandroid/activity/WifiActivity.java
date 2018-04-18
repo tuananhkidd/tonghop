@@ -249,7 +249,6 @@ public class WifiActivity extends AppCompatActivity implements View.OnClickListe
                     unregisterReceiver(this);
                 }
             }, new IntentFilter(WifiManager.SCAN_RESULTS_AVAILABLE_ACTION));
-
         }
 
     }

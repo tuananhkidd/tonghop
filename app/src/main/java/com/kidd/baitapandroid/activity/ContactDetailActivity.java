@@ -1,6 +1,7 @@
 package com.kidd.baitapandroid.activity;
 
 import android.Manifest;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -15,6 +16,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.telephony.SmsManager;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -145,6 +147,39 @@ public class ContactDetailActivity extends AppCompatActivity implements View.OnC
 
             }
         }
+
+    }
+
+    void getInfoCall() {
+        String srvcName = Context.TELEPHONY_SERVICE;
+        TelephonyManager telephonyManager =
+                (TelephonyManager) getSystemService(srvcName);
+
+        String phoneTypeStr = "unknown";
+        int phoneType = telephonyManager.getPhoneType();
+        switch (phoneType) {
+            case (TelephonyManager.PHONE_TYPE_CDMA):
+                phoneTypeStr = "CDMA";
+                break;
+            case (TelephonyManager.PHONE_TYPE_GSM):
+                phoneTypeStr = "GSM";
+                break;
+            case (TelephonyManager.PHONE_TYPE_SIP):
+                phoneTypeStr = "SIP";
+                break;
+            case (TelephonyManager.PHONE_TYPE_NONE):
+                phoneTypeStr = "None";
+                break;
+            default:
+                break;
+        }
+
+        Log.i("Call State", phoneTypeStr);
+
+//        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+//              return;
+//        }
+
 
     }
 

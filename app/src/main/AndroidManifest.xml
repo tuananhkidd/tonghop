@@ -39,7 +39,12 @@
             android:name=".activity.ContactDetailActivity"
             android:theme="@style/Theme.Design.Light.NoActionBar"></activity>
 
-
+        <receiver android:name=".receiver.OutGoingCallReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+                <action android:name="android.intent.action.NEW_OUTGOING_CALL"/>
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>
